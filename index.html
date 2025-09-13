@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rupesh Mekala | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')">☰</div>
+
+<nav id="navbar">
+  <img src="./accerts/profileImage.jfif" alt="Rupesh Mekala" />
+  <h2>Rupesh</h2>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#roles">Roles</a>
+   <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+  <a class="resume-btn" href="./accerts/Rupesh Full Stack.pdf" target="_blank">Download Resume</a>
+</nav>
+
+<main>
+  <header>
+    <h1>Rupesh Mekala</h1>
+    <p>Software Engineer |Full-Stack & API Development | Java, Spring Boot, Docker, Kafka |</p>
+    <p>    Test Automation: Selenium & Appium </p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Detail-oriented Associate Software Engineer with 2.7 years of experience in Full Stack Development, API
+Development, and Automation Testing. Proficient in Java, Spring Boot, Web Sockets, Docker, Kafka, Selenium,
+Appium, Postman, and Rest Assured. Skilled in developing and optimizing RESTful APIs, and testing web, mobile,
+and API services. Strong advocate of Agile methodologies, with a proven ability to deliver high-quality software
+solutions and collaborate effectively with cross-functional teams in fast-paced environments.
+</p>
+  </section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="card" onclick="openModal('firecloud')">
+      <h3>Fire Cloud – Live Test Execution Platform</h3>
+      <p>Click to view detailed contribution...</p>
+    </div>
+    <div class="card" onclick="openModal('fireflink')">
+      <h3>Fireflink – Scriptless Automation Testing Platform</h3>
+      <p>Click to view detailed contribution...</p>
+    </div>
+    <div class="card" onclick="openModal('pantaloons')">
+      <h3>Pantaloons E-Commerce Web App</h3>
+      <p>Click to view detailed contribution...</p>
+    </div>
+  </div>
+</section>
+
+
+  <section id="roles">
+    <h2>Roles and Responsibilities in Fireflink</h2>
+    <div class="scroll-section">
+      <div class="role-slide"><p><strong>Full Stack developer Developer:</strong> 
+        <ul>
+            <li>Designed, developed, and optimized RESTful APIs using Java and Spring Boot, improving response times by up to 30%</li>
+            <li>Integrated Kafka for real-time messaging and event-driven architecture, enhancing system scalability. </li>
+            <li>Implemented Docker containers for development and deployment, ensuring consistent environments across teams</li>
+            <li>Developed end-to-end features for web and mobile applications, collaborating closely with UI/UX teams for seamless integration. </li>
+            <li>Conducted code reviews, enforced coding standards, and mentored junior developers on best practices.</li>
+            <li>Optimized Mongo queries and database structures, resulting in improved application performance. </li>
+            <li>Built and maintained unit and integration tests to ensure code quality and system reliability. </li>
+            <li>Worked in Agile/Scrum environment, participating in sprint planning, daily stand-ups, and retrospectives.</li>
+        </ul>
+        </p></div>
+      <div class="role-slide"><p><strong>Automation Testing :</strong><ul>
+        <li>Architected and built a robust automation framework for mobile and web applications using Appium, Selenium, and Fireflink, enabling scalable test automation.</li>
+        <li>Led and managed a team to develop and maintain 500+ automated test cases, significantly enhancing test coverage and efficiency</li>
+        <li>Achieved a 40% reduction in manual testing efforts by automating critical test scenarios across multiple platforms</li>
+        <li>Conducted code reviews and raised Pull Requests for automation scripts, ensuring high code quality and adherence to best practices.</li>
+        <li>Executed and monitored Jenkins CI/CD pipelines, diagnosing automation failures and collaborating with developers to resolve defects quickly.</li>
+      </ul></p></div>
+
+    </div>
+  </section>
+
+    <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="card" onclick="showSkillDetails(['Java', 'J2EE', 'JavaScript'], 'Languages')">
+        <h3>Languages</h3><p>Java, J2EE, JavaScript</p>
+      </div>
+      <div class="card" onclick="showSkillDetails(['HTML', 'CSS', 'React JS'], 'Web Technology')">
+        <h3>Web Technology</h3><p>HTML, CSS, React JS</p>
+      </div>
+      <div class="card" onclick="showSkillDetails(['MongoDB', 'SQL'], 'Databases')">
+        <h3>Databases</h3><p>MongoDB, SQL</p>
+      </div>
+      <div class="card" onclick="showSkillDetails(['Spring Boot', 'Spring MVC', 'Micronaut'], 'Frameworks')">
+        <h3>Frameworks</h3><p>Spring Boot, Spring MVC, Micronaut</p>
+      </div>
+      <div class="card" onclick="showSkillDetails(['Apache Kafka'], 'Messaging & Streaming Platforms')">
+        <h3>Messaging & Streaming Platforms</h3><p>Apache Kafka</p>
+      </div>
+      <div class="card" onclick="showSkillDetails(['Janus WebRTC'], 'Media & Real-Time Communication')">
+        <h3>Media & Real-Time Communication</h3><p>Janus WebRTC</p>
+      </div>
+      <div class="card" onclick="showSkillDetails(['Docker'], 'Containerization')">
+        <h3>Containerization</h3><p>Docker</p>
+      </div>
+      <div class="card" onclick="showSkillDetails(['Jenkins'], 'Build & CI/CD Tools')">
+        <h3>Build & CI/CD Tools</h3><p>Jenkins</p>
+      </div>
+      <div class="card" onclick="showSkillDetails(['AWS'], 'Cloud Platforms')">
+        <h3>Cloud Platforms</h3><p>AWS</p>
+      </div>
+      <div class="card" onclick="showSkillDetails(['GIT'], 'Version Controls')">
+        <h3>Version Controls</h3><p>GIT</p>
+      </div>
+      <div class="card" onclick="showSkillDetails(['Data Structures'], 'Core CS Concepts')">
+        <h3>Core CS Concepts</h3><p>Data Structures</p>
+      </div>
+      <div class="card" onclick="showSkillDetails(['Eclipse', 'VS Code', 'IntelliJ IDEA'], 'IDE Tools')">
+        <h3>IDE Tools</h3><p>Eclipse, VS Code, IntelliJ IDEA</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:mekalarupesh0@gmail.com">mekalarupesh0@gmail.com</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/rupesh-mekala" target="_blank">linkedin.com/in/rupesh-mekala</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/rupesh4950" target="_blank">github.com/rupesh4950</a></p>
+    <p><strong>Location:</strong> Bangalore, India</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Rupesh Mekala | Built with 💙</p>
+  </footer>
+</main>
+
+<!-- Modal -->
+<div id="modal">
+  <div id="modal-content">
+    <span onclick="closeModal()">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

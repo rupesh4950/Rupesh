@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rupesh Mekala | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f4f4f4; color:mmmmm #333; }
+    nav {
+      position: fixed; top: 0; left: 0; width: 220px; height: 100vh;
+      background: #2c3e50; color: #fff; display: flex; flex-direction: column;
+      align-items: center; padding-top: 30px; z-index: 1000;
+    }
+    nav img {
+      width: 100px; height: 100px; border-radius: 50%;
+      object-fit: cover; margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    nav h2 { font-size: 1.4rem; margin-bottom: 25px; }
+    nav a {
+      color: #ccc; text-decoration: none; margin: 12px 0;
+      font-size: 1rem; padding: 10px 15px; border-radius: 5px;
+      width: 100%; text-align: center; transition: background 0.3s ease;
+    }
+    nav a:hover, nav a.active { background: #007BFF; color: white; }
+    nav .resume-btn { background: #007BFF; margin-top: 25px; color: white; }
+
+    .hamburger {
+      display: none; position: fixed; top: 15px; left: 15px; z-index: 1500;
+      font-size: 1.8rem; color: #007BFF; background: #fff; border-radius: 5px;
+      padding: 5px 10px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    main { margin-left: 220px; padding-top: 60px; }
+    header { background: #2c3e50; color: white; text-align: center; padding: 60px 20px; }
+
+    section {
+      padding: 60px 30px; max-width: 1000px; margin: auto;
+      opacity: 0; transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible { opacity: 1; transform: translateY(0); }
+
+    h2 {
+      font-size: 2rem; color: #007BFF; margin-bottom: 20px;
+      border-left: 5px solid #007BFF; padding-left: 15px;
+    }
+    .skills-grid, .projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;
+    }
+    .card {
+      background: #fff; padding: 20px; border-radius: 10px;
+      box-shadow: 0 10px 8px rgba(0,0,0,0.1); cursor: pointer;
+    }
+    footer {
+      background: #2c3e50; color: #ccc; text-align: center;
+      padding: 30px 20px; font-size: 0.9rem;
+    }
+
+    #modal {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7); z-index: 2000;
+      justify-content: center; align-items: center;
+    }
+    #modal-content {
+      background: #fff; border-radius: 10px; max-width: 600px;
+      padding: 30px; position: relative; box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    #modal-content span {
+      position: absolute; top: 15px; right: 20px;
+      font-size: 1.5rem; cursor: pointer;
+    }
+.scroll-section {
+  height: 200px;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  border-left: 3px solid #007BFF;
+  padding-left: 15px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.role-slide {
+  scroll-snap-align: start;
+  min-height: 80px;
+  padding: 1px 1px;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+
+    @media (max-width: 768px) {
+      nav {
+        position: fixed; top: 0; left: 0; width: 100%; height: auto;
+        flex-direction: row; flex-wrap: wrap; justify-content: center; padding: 10px;
+      }
+      nav img, nav h2 { display: none; }
+      nav a { margin: 5px; font-size: 0.9rem; padding: 8px 10px; width: auto; }
+      .hamburger { display: block; }
+      main { margin-left: 0; padding-top: 100px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')">☰</div>
+
+<nav id="navbar">
+  <img src="https://media.licdn.com/dms/image/v2/D4D03AQEJ8cweyZKS-Q/profile-displayphoto-scale_200_200/B4DZf.Eh7wGYAc-/0/1752314292782?e=1758153600&v=beta&t=FBOaqkD2cPhURt_gKR0XAkdWYzdnnVmT90OvMKSyJp8" alt="Rupesh Mekala" />
+  <h2>Rupesh</h2>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#roles">Roles</a>
+  <a href="#contact">Contact</a>
+  <a class="resume-btn" href="https://drive.google.com/YOUR_RESUME_LINK" target="_blank">Download Resume</a>
+</nav>
+
+<main>
+  <header>
+    <h1>Rupesh Mekala</h1>
+    <p>Java Backend & Full-Stack Developer | Spring Boot | React | Kafka | Docker</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m an Associate Software Engineer at Fireflink with 2+ years of experience. I’ve worked on scalable frontend-backend modules using Spring Boot, Micronaut, MongoDB, React, Kafka, and AWS. I enjoy solving critical backend challenges and optimizing cloud-based systems.</p>
+  </section>
+
+
+ <section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="card" onclick="showSkillDetails(['Java', 'J2EE', 'JavaScript'], 'Languages')">
+      <h3>Languages</h3>
+      <p>Java, J2EE, JavaScript</p>
+    </div>
+    <div class="card" onclick="showSkillDetails(['HTML', 'CSS', 'React JS'], 'Web Technology')">
+      <h3>Web Technology</h3>
+      <p>HTML, CSS, React JS</p>
+    </div>
+    <div class="card" onclick="showSkillDetails(['MongoDB', 'SQL'], 'Databases')">
+      <h3>Databases</h3>
+      <p>MongoDB, SQL</p>
+    </div>
+    <div class="card" onclick="showSkillDetails(['Spring Boot', 'Spring MVC', 'Micronaut'], 'Frameworks')">
+      <h3>Frameworks</h3>
+      <p>Spring Boot, Spring MVC, Micronaut</p>
+    </div>
+    <div class="card" onclick="showSkillDetails(['Apache Kafka'], 'Messaging & Streaming Platforms')">
+      <h3>Messaging & Streaming Platforms</h3>
+      <p>Apache Kafka</p>
+    </div>
+    <div class="card" onclick="showSkillDetails(['Janus WebRTC'], 'Media & Real-Time Communication')">
+      <h3>Media & Real-Time Communication</h3>
+      <p>Janus WebRTC</p>
+    </div>
+    <div class="card" onclick="showSkillDetails(['Docker'], 'Containerization')">
+      <h3>Containerization</h3>
+      <p>Docker</p>
+    </div>
+    <div class="card" onclick="showSkillDetails(['Jenkins'], 'Build & CI/CD Tools')">
+      <h3>Build & CI/CD Tools</h3>
+      <p>Jenkins</p>
+    </div>
+    <div class="card" onclick="showSkillDetails(['AWS'], 'Cloud Platforms')">
+      <h3>Cloud Platforms</h3>
+      <p>AWS</p>
+    </div>
+    <div class="card" onclick="showSkillDetails(['GIT'], 'Version Controls')">
+      <h3>Version Controls</h3>
+      <p>GIT</p>
+    </div>
+    <div class="card" onclick="showSkillDetails(['Data Structures'], 'Core CS Concepts')">
+      <h3>Core CS Concepts</h3>
+      <p>Data Structures</p>
+    </div>
+    <div class="card" onclick="showSkillDetails(['Eclipse', 'VS Code', 'IntelliJ IDEA'], 'IDE Tools')">
+      <h3>IDE Tools</h3>
+      <p>Eclipse, VS Code, IntelliJ IDEA</p>
+    </div>
+  </div>
+</section>
+
+
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="card" onclick="openModal('automation')">
+        <h3>Fireflink Automation Tool</h3>
+        <p>Click to view detailed contribution...</p>
+      </div>
+      <div class="card" onclick="openModal('cloud')">
+        <h3>Fire Cloud Module</h3>
+        <p>Click to view detailed contribution...</p>
+      </div>
+    </div>
+  </section>
+  <section id="roles">
+  <h2>Roles and Responsibilities in Fireflink</h2>
+  <div class="scroll-section">
+    <div class="role-slide">
+      <p><strong>API Development and Optimization:</strong> Designed, developed, and optimized APIs for Fireflink codeless automation tool to enhance product performance and ensure seamless integration with other systems.</p>
+    </div>
+    <div class="role-slide">
+      <p><strong>Front-End and Back-End Development:</strong> Worked as part of the Fire Cloud team to implement solutions for product enhancements. Contributed to both the front-end (React JS) and back-end (Java) development to build a cohesive, efficient, and user-friendly product.</p>
+    </div>
+    <div class="role-slide">
+      <p><strong>Solution Implementation:</strong> Collaborated with cross-functional teams to identify problems and propose innovative solutions, focusing on improving the overall product experience and functionality.</p>
+    </div>
+    <div class="role-slide">
+      <p><strong>Collaboration and Communication:</strong> Regularly communicated with product managers, designers, and other developers to ensure alignment on project goals and timelines, contributing to the successful delivery of product features.</p>
+    </div>
+  </div>
+</section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:mekalarupesh0@gmail.com">mekalarupesh0@gmail.com</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/rupesh-mekala" target="_blank">linkedin.com/in/rupesh-mekala</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/rupesh4950" target="_blank">github.com/rupesh4950</a></p>
+    <p><strong>Location:</strong> Bangalore, India</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Rupesh Mekala | Built with 💙</p>
+  </footer>
+</main>
+
+<!-- Modal -->
+<div id="modal">
+  <div id="modal-content">
+    <span onclick="closeModal()">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+  const navLinks = document.querySelectorAll('nav a[href^=\"#\"]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    document.querySelectorAll('section').forEach(section => {
+      const top = section.offsetTop - 150;
+      if (scrollY >= top) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  function openModal(project) {
+    const modal = document.getElementById("modal");
+	  const body = document.getElementById("modal-body");
+    const content = {
+      automation: `<h2>Fireflink Automation Tool</h2><p>Optimized backend logic, cleaned MongoDB, improved performance.</p><ul><li>UI load enhancements</li><li>Data cleanup</li></ul>`,
+      cloud: `<h2>Fire Cloud Module</h2><p>Built full-stack functionality, handled deployment and integration.</p><ul><li>React + Spring Boot</li><li>Scalable microservices</li></ul>`
+    };
+    body.innerHTML = content[project] || '<p>No details available.</p>';
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target === document.getElementById("modal")) {
+      closeModal();
+    }
+  };
+
+  function showSkillDetails(items, title) {
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+    modal.style.zIndex = '9999';
+
+    const content = document.createElement('div');
+    content.style.backgroundColor = '#fff';
+    content.style.padding = '20px';
+    content.style.borderRadius = '10px';
+    content.style.maxWidth = '400px';
+    content.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+
+    const closeBtn = document.createElement('span');
+    closeBtn.innerHTML = '&times;';
+    closeBtn.style.position = 'fixed';
+    closeBtn.style.display = 'flex';
+    closeBtn.style.top = '20px';
+    closeBtn.style.right = '30px';
+    closeBtn.style.fontSize = '28px';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.onclick = () => document.body.removeChild(modal);
+
+    modal.addEventListener('click', function(e) {
+      if (!content.contains(e.target)) {
+        document.body.removeChild(modal);
+      }
+    });
+
+    const ul = document.createElement('ul');
+    items.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      ul.appendChild(li);
+    });
+
+    content.appendChild(closeBtn);
+
+    const heading = document.createElement('h3');
+    heading.textContent = title;
+    heading.style.marginTop = '0';
+    heading.style.marginBottom = '10px';
+    content.appendChild(heading);
+    content.appendChild(ul);
+    modal.appendChild(content);
+    document.body.appendChild(modal);
+  }
+
+</script>
+
+</body>
+</html>
